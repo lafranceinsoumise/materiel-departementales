@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", function() {
   var DOWNLOAD_BV = document.getElementById("download_bv");
   var DOWNLOAD_PF = document.getElementById("download_pf");
   var DPT_INPUT = document.getElementById("departement");
-  var PREVIEW = document.getElementById("preview");
+  var PREVIEW_BV = document.getElementById("preview_bv");
+  var PREVIEW_PF = document.getElementById("preview_pf");
 
   var dpt = DPT_INPUT.value.trim()
   DPT_INPUT.addEventListener("keyup", function (e) {
@@ -208,7 +209,7 @@ window.addEventListener("DOMContentLoaded", function() {
       ctx.fillText(s2.data.lastName, 938, 1010);
     }
 
-    // PREVIEW.src = CANVAS_BV.toDataURL();
+    PREVIEW_BV.style.backgroundImage = "url(" + CANVAS_BV.toDataURL(0.25) + ")";
     DOWNLOAD_BV.setAttribute("href", CANVAS_BV.toDataURL("image/png").replace("image/png", "image/octet-stream"));
   }
 
@@ -303,7 +304,7 @@ window.addEventListener("DOMContentLoaded", function() {
       ctx.fillText(s1.data.profession, 1552, 1789);
     }
 
-    PREVIEW.src = CANVAS_PF.toDataURL("image/png", 0.5);
+    PREVIEW_PF.style.backgroundImage = "url(" + CANVAS_PF.toDataURL("image/png", 0.25) + ")";
     DOWNLOAD_PF.setAttribute("href", CANVAS_PF.toDataURL("image/png").replace("image/png", "image/octet-stream"));
   }
 

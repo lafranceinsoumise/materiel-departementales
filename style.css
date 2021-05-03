@@ -52,22 +52,29 @@ input {
   margin: 0;
 }
 
-.download {
-  text-align: center;
-}
-
 canvas {
   display: none;
 }
 
-/* #canvas_pf {
-  display: block;
-} */
+.download {
+  text-align: center;
+  margin: 24px;
+}
 
-#preview {
+#previews {
+  margin: 24px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 500px;
+}
+
+#previews div {
   display: block;
-  margin: 24px auto;
-  width: 50%;
-  height: auto;
+  flex: 1 1 auto;
   border: 1px solid lightgrey;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
 }
