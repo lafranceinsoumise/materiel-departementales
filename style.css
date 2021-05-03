@@ -7,12 +7,18 @@ html, body {
   box-sizing: border-box;
 }
 
+.departement {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 32px;
+}
+
 form {
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
   width: 100%;
-  padding: 24px;
+  padding: 0 24px;
 }
 
 form fieldset {
@@ -27,21 +33,21 @@ form fieldset legend {
   font-weight: bold;
 }
 
-form fieldset label {
+label {
   display: block;
   margin: 0;
   padding: 0;
   padding-bottom: 0.5rem;
 }
 
-form fieldset label span {
+label span {
   display: block;
   font-weight: 500;
   font-size: 0.875rem;
   padding-bottom: 0.25rem;
 }
 
-form fieldset input {
+input {
   width: 100%;
   margin: 0;
 }
@@ -50,14 +56,18 @@ form fieldset input {
   text-align: center;
 }
 
+canvas {
+  display: none;
+}
+
+/* #canvas_pf {
+  display: block;
+} */
+
 #preview {
   display: block;
   margin: 24px auto;
   width: 50%;
   height: auto;
   border: 1px solid lightgrey;
-}
-
-#canvas {
-  display: none;
 }

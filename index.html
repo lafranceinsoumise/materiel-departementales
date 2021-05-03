@@ -9,6 +9,12 @@
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="departement">
+      <label for="departement">
+        <span>Département</span>
+        <input id="departement" name="departement" type="text" value="" />
+      </label>
+    </div>
     <form>
       <fieldset>
         <legend>
@@ -96,10 +102,13 @@
       </fieldset>
     </form>
     <div class="download">
-      <a id="download" href="#" download="bv_departementales.png">Télécharger</a>
+      <a id="download_bv" href="#" download="bv_departementales.png">Télécharger le bulletin de vote</a>
+      <canvas id="canvas_bv" width="1748" height="1240" style="border: 1px solid black;"></canvas>
+      <br />
+      <a id="download_pf" href="#" download="pf_departementales.png">Télécharger la circulaire</a>
+      <canvas id="canvas_pf" width="2655" height="3683" style="border: 1px solid black;"></canvas>
     </div>
     <img id="preview" />
-    <canvas id="canvas" width="1748" height="1240" style="border: 1px solid black;"></canvas>
     <script src="./index.js"></script>
   </body>
 </html>
