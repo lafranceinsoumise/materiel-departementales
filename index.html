@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bulletin de vote</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>
+          Candidat·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="c1_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="c1_lastName" value="" />
+        </label>
+        <br />
+        <label for="profession">
+          <span>Profession</span>
+          <br />
+          <input type="text" name="profession" id="c1_profession" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="c1_photo" value="" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Candidat·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="c2_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="c2_lastName" value="" />
+        </label>
+        <br />
+        <label for="profession">
+          <span>Profession</span>
+          <br />
+          <input type="text" name="profession" id="c2_profession" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="c2_photo" value="" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Suppléant·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="s1_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="s1_lastName" value="" />
+        </label>
+        <br />
+        <label for="profession">
+          <span>Profession</span>
+          <br />
+          <input type="text" name="profession" id="s1_profession" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="s1_photo" value="" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Suppléant·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="s2_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="s2_lastName" value="" />
+        </label>
+        <br />
+        <label for="profession">
+          <span>Profession</span>
+          <br />
+          <input type="text" name="profession" id="s2_profession" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="s2_photo" value="" />
+        </label>
+      </fieldset>
+    </form>
+    <div id="preview"></div>
+    <canvas id="canvas" width="1748" height="1240" style="border: 1px solid black;"></canvas>
+    <script src="./index.js"></script>
+  </body>
+</html>
