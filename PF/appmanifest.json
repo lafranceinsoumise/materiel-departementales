@@ -1,6 +1,6 @@
 {
-	"name": "Generateur de profession de foi — Départementales — la France insoumise",
-	"short_name": "Generateur de profession de foi — Départementales — la France insoumise",
+	"name": "GenerateurPF",
+	"short_name": "GenerateurPF",
 	"description": "",
 	"start_url": "index.html",
 	"display": "fullscreen",
