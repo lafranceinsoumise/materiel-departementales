@@ -268,15 +268,15 @@ window.addEventListener("DOMContentLoaded", function() {
       drawImageProp(ctx, c2.data.photo, 1327, 273, 1232, 964);
     }
     ctx.textAlign = "left";
-    if (c1.data.firstName) {
+    if (c2.data.firstName) {
       ctx.fillStyle = "#000000";
       ctx.font = "bold 60px Montserrat";
-      ctx.fillText(c1.data.firstName, 1386, 1316);
+      ctx.fillText(c2.data.firstName, 1386, 1316);
     }
-    if (c1.data.lastName) {
+    if (c2.data.lastName) {
       ctx.fillStyle = "#44b9ce";
       ctx.font = "bold 80px Montserrat";
-      ctx.fillText(c1.data.lastName.toUpperCase(), 1386, 1400);
+      ctx.fillText(c2.data.lastName.toUpperCase(), 1386, 1400);
     }
     if (c2.data.profession) {
       ctx.fillStyle = "#000000";
@@ -297,10 +297,10 @@ window.addEventListener("DOMContentLoaded", function() {
       ctx.font = "bold 50px Montserrat";
       ctx.fillText((s2.data.firstName + " " + s2.data.lastName).trim().toUpperCase(), 1552, 1740);
     }
-    if (s1.data.profession) {
+    if (s2.data.profession) {
       ctx.fillStyle = "#000000";
       ctx.font = "500 40px Montserrat";
-      ctx.fillText(s1.data.profession, 1552, 1789);
+      ctx.fillText(s2.data.profession, 1552, 1789);
     }
 
     PREVIEW_PF.style.backgroundImage = "url(" + CANVAS_PF.toDataURL("image/png", 0.25) + ")";
