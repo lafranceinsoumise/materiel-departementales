@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bulletin de vote</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+
+    <div class="block-division">
+
+    <form>
+      <fieldset>
+        <legend>
+          Département
+        </legend>
+        <label for="localisation">
+          <span>Département</span>
+          <br />
+          <input type="text" name="localisation" id="localisation" value="" style="width:100%;" />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          Candidat·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="c1_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="c1_lastName" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="c1_photo" value="" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Candidat·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="c2_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="c2_lastName" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="c2_photo" value="" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Suppléant·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="s1_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="s1_lastName" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="s1_photo" value="" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Suppléant·e
+        </legend>
+        <label for="firstName">
+          <span>Prénom</span>
+          <br />
+          <input type="text" name="firstName" id="s2_firstName" value="" />
+        </label>
+        <br />
+        <label for="lastName">
+          <span>Nom</span>
+          <br />
+          <input type="text" name="lastName" id="s2_lastName" value="" />
+        </label>
+        <br />
+        <label for="photo">
+          <span>Photo</span>
+          <br />
+          <input type="file" name="photo" id="s2_photo" value="" />
+        </label>
+      </fieldset>
+      
+    </fieldset>
+
+    <a href="#" >
+      Télécharger l'image
+    </a>
+
+    </form>
+
+  </div>
+
+  <div class="block-division">
+
+    <div id="preview"></div>
+  </div>
+
+
+
+    <canvas id="canvas"  width="1000" height="1406" style="border: 1px solid black;"></canvas>
+    <script src="./index.js"></script>
+
+  </body>
+</html>
