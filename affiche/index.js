@@ -1,13 +1,21 @@
+
 window.addEventListener("DOMContentLoaded", function () {
   var CANVAS = document.getElementById("canvas");
   var CTX = CANVAS.getContext("2d");
   var PREVIEW = document.getElementById("preview");
+  var DOWNLOAD_AF = document.getElementById("download_affiche");
   var DATA_URL = "";
+  var BUTTON_PREVIEW = document.getElementById("launch_preview");
+
+  BUTTON_PREVIEW.addEventListener("click", updateContext);
 
   var BG = new Image();
-  var BG_READY = false;
-  BG.addEventListener("load", function (e) { BG_READY = true; updateContext(); });
   BG.src = "./affiche.png";
+  var BG_READY = false;
+  BG.addEventListener("load", function (e) { 
+    BG_READY = true;
+    updateContext(); 
+  });
 
   var Person = function (id) {
     this.data = {
@@ -194,8 +202,9 @@ window.addEventListener("DOMContentLoaded", function () {
       CTX.fillText(localisation.data.localisation, CANVAS.width / 2, GEOLOC_CONFIG.y);
     }
 
-    DATA_URL = CANVAS.toDataURL();
+    DATA_URL = CANVAS.toDataURL("image/jpeg", 0.2);
     PREVIEW.style.backgroundImage = "url(" + DATA_URL + ")";
+    DOWNLOAD_AF.setAttribute("href", CANVAS.toDataURL("image/png").replace("image/png", "image/octet-stream"));
   }
 
   var c1 = new Person("c1");
