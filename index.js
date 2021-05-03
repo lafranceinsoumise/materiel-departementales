@@ -1,11 +1,14 @@
 window.addEventListener("DOMContentLoaded", function() {
   var CANVAS_BV = document.getElementById("canvas_bv");
   var CANVAS_PF = document.getElementById("canvas_pf");
+  var CANVAS_AF = document.getElementById("canvas_af");
   var DOWNLOAD_BV = document.getElementById("download_bv");
   var DOWNLOAD_PF = document.getElementById("download_pf");
+  var DOWNLOAD_AF = document.getElementById("download_af");
   var DPT_INPUT = document.getElementById("departement");
   var PREVIEW_BV = document.getElementById("preview_bv");
   var PREVIEW_PF = document.getElementById("preview_pf");
+  var PREVIEW_AF = document.getElementById("preview_af");
 
   var dpt = DPT_INPUT.value.trim()
   DPT_INPUT.addEventListener("keyup", function (e) {
@@ -25,6 +28,13 @@ window.addEventListener("DOMContentLoaded", function() {
     BG_PF_READY = true;
   });
   BG_PF.src = "./pf.png";
+
+  var BG_AF = new Image();
+  var BG_AF_READY = false;
+  BG_AF.addEventListener("load", function(e) {
+    BG_AF_READY = true;
+  });
+  BG_AF.src = "./af.png";
 
   var Person = function(id) {
     this.data = {
@@ -159,6 +169,18 @@ window.addEventListener("DOMContentLoaded", function() {
     ctx.drawImage(img, cx, cy, cw, ch, x, y, w, h);
   }
 
+  function drawAF() {
+    var ctx = CANVAS_AF.getContext("2d");
+    ctx.clearRect(0, 0, CANVAS_AF.width, CANVAS_AF.height);
+    if (!BG_AF_READY) {
+      return;
+    }
+    ctx.drawImage(BG_AF, 0, 0, CANVAS_AF.width, CANVAS_AF.height);
+
+    PREVIEW_AF.style.backgroundImage = "url(" + CANVAS_AF.toDataURL("image/jpeg", 0.3) + ")";
+    DOWNLOAD_AF.href="#";
+  }
+
   function drawBV() {
     var ctx = CANVAS_BV.getContext("2d");
     ctx.clearRect(0, 0, CANVAS_PF.width, CANVAS_PF.height);
@@ -210,7 +232,6 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     PREVIEW_BV.style.backgroundImage = "url(" + CANVAS_BV.toDataURL("image/jpeg", 0.3) + ")";
-    DOWNLOAD_BV.href="#";
   }
 
   function drawPF() {
@@ -306,7 +327,6 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     PREVIEW_PF.style.backgroundImage = "url(" + CANVAS_PF.toDataURL("image/jpeg", 0.3) + ")";
-    DOWNLOAD_PF.href = "#";
   }
 
   DOWNLOAD_BV.addEventListener("click", function (e) {
@@ -315,10 +335,14 @@ window.addEventListener("DOMContentLoaded", function() {
   DOWNLOAD_PF.addEventListener("click", function (e) {
     e.target.href = CANVAS_PF.toDataURL("image/png").replace("image/png", "image/octet-stream");
   });
+  DOWNLOAD_AF.addEventListener("click", function (e) {
+    e.target.href = CANVAS_AF.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  });
 
   function updateContext() {
     drawBV();
     drawPF();
+    drawAF();
   }
 
   requestInterval(updateContext, 120);
