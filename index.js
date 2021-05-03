@@ -95,7 +95,6 @@ window.addEventListener("DOMContentLoaded", function() {
   };
 
   function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
-
     if (arguments.length === 2) {
       x = y = 0;
       w = ctx.canvas.width;
@@ -313,5 +312,5 @@ window.addEventListener("DOMContentLoaded", function() {
     drawPF();
   }
 
-  requestInterval(updateContext, 60);
+  requestInterval(updateContext, 120);
 });

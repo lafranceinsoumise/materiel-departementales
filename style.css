@@ -3,6 +3,10 @@ html, body {
   width: 100%;
 }
 
+body {
+  padding: 24px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,7 +14,7 @@ html, body {
 .departement {
   box-sizing: border-box;
   width: 100%;
-  padding: 32px;
+  padding: 16px 0;
 }
 
 form {
@@ -18,15 +22,15 @@ form {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
-  padding: 0 24px;
+  padding: 0;
 }
 
 form fieldset {
   border: 1px solid lightgrey;
   box-sizing: border-box;
-  margin: .5rem;
+  margin-bottom: .5rem;
   padding: 1rem;
-  flex: 1 1 33%;
+  flex: 1 1 40%;
 }
 
 form fieldset legend {
@@ -58,11 +62,11 @@ canvas {
 
 .download {
   text-align: center;
-  margin: 24px;
+  margin: 24px 0;
 }
 
 #previews {
-  margin: 24px;
+  margin: 24px 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
