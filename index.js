@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
   var CANVAS = document.getElementById("canvas");
   var CTX = CANVAS.getContext("2d");
+  var DOWNLOAD_BTN = document.getElementById("download");
   var PREVIEW = document.getElementById("preview");
   var DATA_URL = "";
 
@@ -23,7 +24,7 @@ window.addEventListener("DOMContentLoaded", function () {
       photo: document.getElementById(id + "_photo")
     }
     this.update = function (event) {
-      this.data[event.target.name] = event.target.value;
+      this.data[event.target.name] = event.target.value.trim();
       updateContext();
     }
     this.update = this.update.bind(this);
@@ -57,74 +58,58 @@ window.addEventListener("DOMContentLoaded", function () {
   var s1 = new Person("s1");
   var s2 = new Person("s2");
 
-
-  var FIRST_NAME_CONFIG = {
-    x: 0,
-    y: 0,
-    w: 200,
-    h: 200,
-    font: "bold 62px Montserrat",
-    color: "#44b9ce"
-  };
-
-  var LAST_NAME_CONFIG = {
-    x: 0,
-    y: 30,
-    w: 200,
-    h: 200,
-    font: "bold 80px Montserrat",
-    color: "#44b9ce"
-  };
-
-  var PHOTO_CONFIG = {
-    x: 50,
-    y: 50,
-    w: 100,
-    h: 100
-  }
-
   function updateContext () {
     CTX.clearRect(0, 0, CANVAS.width, CANVAS.height);
     if (BG_READY) {
       CTX.drawImage(BG, 0, 0, CANVAS.width, CANVAS.height);
     }
-    CTX.textBaseline = "top";
 
+    CTX.textBaseline = "top";
+    CTX.fillStyle = "#44b9ce";
+
+    CTX.textAlign = "right";
     if (c1.data.firstName) {
-      CTX.textAlign = "right";
-      CTX.font = FIRST_NAME_CONFIG.font;
-      CTX.fillStyle = FIRST_NAME_CONFIG.color;
-      CTX.fillText(c1.data.firstName, 800, 620);
+      CTX.font = "bold 60px Montserrat";
+      CTX.fillText(c1.data.firstName, 810, 625);
     }
     if (c1.data.lastName) {
-      CTX.textAlign = "right";
-      CTX.font = LAST_NAME_CONFIG.font;
-      CTX.fillStyle = LAST_NAME_CONFIG.color;
-      CTX.fillText(c1.data.lastName, 800, 695);
+      CTX.font = "bold 80px Montserrat";
+      CTX.fillText(c1.data.lastName, 810, 693);
     }
+    CTX.font = "500 32px Montserrat";
+    CTX.fillText("REMPLAÇANTE", 810, 910);
+    if (s1.data.firstName) {
+      CTX.font = "bold 50px Montserrat";
+      CTX.fillText(s1.data.firstName, 810, 957);
+    }
+    if (s1.data.lastName) {
+      CTX.font = "bold 70px Montserrat";
+      CTX.fillText(s1.data.lastName, 810, 1010);
+    }
+
+
+    CTX.textAlign = "left";
     if (c2.data.firstName) {
-      CTX.textAlign = "left";
-      CTX.font = FIRST_NAME_CONFIG.font;
-      CTX.fillStyle = FIRST_NAME_CONFIG.color;
-      CTX.fillText(c2.data.firstName, 936, 620);
+      CTX.font = "bold 60px Montserrat";
+      CTX.fillText(c2.data.firstName, 938, 625);
     }
     if (c2.data.lastName) {
-      CTX.textAlign = "left";
-      CTX.font = LAST_NAME_CONFIG.font;
-      CTX.fillStyle = LAST_NAME_CONFIG.color;
-      CTX.fillText(c2.data.lastName, 936, 695);
+      CTX.font = "bold 80px Montserrat";
+      CTX.fillText(c2.data.lastName, 938, 693);
+    }
+    CTX.font = "500 32px Montserrat";
+    CTX.fillText("REMPLAÇANT", 938, 910);
+    if (s2.data.firstName) {
+      CTX.font = "bold 50px Montserrat";
+      CTX.fillText(s2.data.firstName, 938, 957);
+    }
+    if (s2.data.lastName) {
+      CTX.font = "bold 70px Montserrat";
+      CTX.fillText(s2.data.lastName, 938, 1010);
     }
 
-    // if (c1.data.profession) {
-    //   CTX.font = LAST_NAME_CONFIG.font;
-    //   CTX.fillStyle = LAST_NAME_CONFIG.color;
-    //   CTX.fillText(c1.data.profession, LAST_NAME_CONFIG.x, LAST_NAME_CONFIG.y);
-    // }
-    // if (c1.data.image) {
-    //   CTX.drawImage(c1.data.image, PHOTO_CONFIG.x, PHOTO_CONFIG.y, PHOTO_CONFIG.w, PHOTO_CONFIG.h);
-    // }
-
     DATA_URL = CANVAS.toDataURL();
-    PREVIEW.style.backgroundImage = "url(" + DATA_URL + ")";
+    PREVIEW.src = DATA_URL;
+    DOWNLOAD_BTN.setAttribute("href", CANVAS.toDataURL("image/png").replace("image/png", "image/octet-stream"));
   }
 });
