@@ -1,6 +1,6 @@
 {
-	"name": "Générateur de bulletin de vote — la France insoumise",
-	"short_name": "Générateur de bulletin de vote — la France insoumise",
+	"name": "FI - Générateur de bulletin",
+	"short_name": "FI - Générateur de bulletin",
 	"description": "",
 	"start_url": "index.html",
 	"display": "fullscreen",

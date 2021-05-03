@@ -2915,7 +2915,8 @@ if(!wi||!imageInfo)return;if(lastSetCursor===imageInfo)return;lastSetCursor=imag
 		{ContentToEdit: 0},
 		{StaticText: 0},
 		{Sprite3: 0},
-		{ContentToEdit2: 0}
+		{ContentToEdit2: 0},
+		{Indication: 0}
 	];
 }
 
