@@ -161,10 +161,11 @@ window.addEventListener("DOMContentLoaded", function() {
 
   function drawBV() {
     var ctx = CANVAS_BV.getContext("2d");
-    ctx.clearRect(0, 0, CANVAS_BV.width, CANVAS_BV.height);
-    if (BG_BV_READY) {
-      ctx.drawImage(BG_BV, 0, 0, CANVAS_BV.width, CANVAS_BV.height);
+    ctx.clearRect(0, 0, CANVAS_PF.width, CANVAS_PF.height);
+    if (!BG_BV_READY) {
+      return;
     }
+    ctx.drawImage(BG_BV, 0, 0, CANVAS_BV.width, CANVAS_BV.height);
     ctx.textBaseline = "top";
     ctx.fillStyle = "#44b9ce";
 
@@ -208,16 +209,17 @@ window.addEventListener("DOMContentLoaded", function() {
       ctx.fillText(s2.data.lastName, 938, 1010);
     }
 
-    PREVIEW_BV.style.backgroundImage = "url(" + CANVAS_BV.toDataURL(0.25) + ")";
-    DOWNLOAD_BV.setAttribute("href", CANVAS_BV.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+    PREVIEW_BV.style.backgroundImage = "url(" + CANVAS_BV.toDataURL("image/jpeg", 0.3) + ")";
+    DOWNLOAD_BV.href="#";
   }
 
   function drawPF() {
     var ctx = CANVAS_PF.getContext("2d");
     ctx.clearRect(0, 0, CANVAS_PF.width, CANVAS_PF.height);
-    if (BG_PF_READY) {
-      ctx.drawImage(BG_PF, 0, 0, CANVAS_PF.width, CANVAS_PF.height);
+    if (!BG_PF_READY) {
+      return;
     }
+    ctx.drawImage(BG_PF, 0, 0, CANVAS_PF.width, CANVAS_PF.height);
     if (dpt) {
       ctx.textAlign = "center";
       ctx.fillStyle = "#FFFFFF";
@@ -303,9 +305,16 @@ window.addEventListener("DOMContentLoaded", function() {
       ctx.fillText(s2.data.profession, 1552, 1789);
     }
 
-    PREVIEW_PF.style.backgroundImage = "url(" + CANVAS_PF.toDataURL("image/png", 0.25) + ")";
-    DOWNLOAD_PF.setAttribute("href", CANVAS_PF.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+    PREVIEW_PF.style.backgroundImage = "url(" + CANVAS_PF.toDataURL("image/jpeg", 0.3) + ")";
+    DOWNLOAD_PF.href = "#";
   }
+
+  DOWNLOAD_BV.addEventListener("click", function (e) {
+    e.target.href = CANVAS_BV.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  });
+  DOWNLOAD_PF.addEventListener("click", function (e) {
+    e.target.href = CANVAS_PF.toDataURL("image/png").replace("image/png", "image/octet-stream");
+  });
 
   function updateContext() {
     drawBV();
