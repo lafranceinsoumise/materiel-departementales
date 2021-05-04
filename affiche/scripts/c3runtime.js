@@ -3025,6 +3025,8 @@ true}SetTileAt(x,y,id){if(this._tiles[y][x]===id)return;this._tiles[y][x]=id;thi
 		C3.Plugins.System.Cnds.PickByEvaluate,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.TextBox.Exps.Text,
+		C3.Plugins.System.Exps.uppercase,
+		C3.Plugins.Text.Exps.Text,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.DrawingCanvas.Acts.PasteObject,
 		C3.Plugins.DrawingCanvas.Acts.SaveImage,
@@ -3215,6 +3217,11 @@ true}SetTileAt(x,y,id){if(this._tiles[y][x]===id)return;this._tiles[y][x]=id;thi
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
 			return () => ((n0.ExpInstVar()) === (n1.ExpInstVar()) ? 1 : 0);
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const n1 = p._GetNode(1);
+			return () => f0(n1.ExpObject());
 		},
 		() => "DrawingCanvas",
 		() => 0,
