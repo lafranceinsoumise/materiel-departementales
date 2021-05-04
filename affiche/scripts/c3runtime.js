@@ -3032,7 +3032,8 @@ true}SetTileAt(x,y,id){if(this._tiles[y][x]===id)return;this._tiles[y][x]=id;thi
 		C3.Plugins.DrawingCanvas.Acts.Destroy,
 		C3.Plugins.Browser.Acts.InvokeDownload,
 		C3.Plugins.DrawingCanvas.Acts.ClearSnapshot,
-		C3.Plugins.System.Cnds.OnLayoutStart
+		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.Text.Acts.SetFontSize
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3052,6 +3053,7 @@ true}SetTileAt(x,y,id){if(this._tiles[y][x]===id)return;this._tiles[y][x]=id;thi
 		{Mouse: 0},
 		{Download: 0},
 		{BV_Departementales: 0},
+		{fontsize: 0},
 		{ContentToEdit: 0},
 		{StaticText: 0},
 		{Sprite3: 0},
@@ -3217,7 +3219,11 @@ true}SetTileAt(x,y,id){if(this._tiles[y][x]===id)return;this._tiles[y][x]=id;thi
 		() => "DrawingCanvas",
 		() => 0,
 		() => "UI",
-		() => "Départementales PF"
+		() => "Départementales PF",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpInstVar();
+		}
 	];
 }
 
