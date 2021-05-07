@@ -2892,7 +2892,13 @@ if(!wi||!imageInfo)return;if(lastSetCursor===imageInfo)return;lastSetCursor=imag
 		C3.Plugins.System.Acts.SnapshotCanvas,
 		C3.Plugins.System.Acts.WaitForPreviousActions,
 		C3.Plugins.Browser.Acts.InvokeDownload,
-		C3.Plugins.System.Exps.canvassnapshot
+		C3.Plugins.System.Exps.canvassnapshot,
+		C3.Plugins.Mouse.Cnds.OnObjectClicked,
+		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
+		C3.Plugins.Sprite.Acts.SetAnim,
+		C3.Plugins.System.Acts.Wait,
+		C3.Plugins.Sprite.Acts.ToggleBoolInstanceVar,
+		C3.Plugins.System.Cnds.OnLayoutStart
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -2913,10 +2919,16 @@ if(!wi||!imageInfo)return;if(lastSetCursor===imageInfo)return;lastSetCursor=imag
 		{Download: 0},
 		{BV_Departementales: 0},
 		{ContentToEdit: 0},
-		{StaticText: 0},
+		{Remplante: 0},
 		{Sprite3: 0},
 		{ContentToEdit2: 0},
-		{Indication: 0}
+		{Indication: 0},
+		{genre: 0},
+		{Genre: 0},
+		{Remplante2: 0},
+		{Genre2: 0},
+		{TextInput: 0},
+		{Text: 0}
 	];
 }
 
@@ -3035,7 +3047,12 @@ if(!wi||!imageInfo)return;if(lastSetCursor===imageInfo)return;lastSetCursor=imag
 			return () => f0();
 		},
 		() => "Miniature Réseaux Sociaux",
-		() => 100
+		() => 100,
+		() => "F",
+		() => "REMPLAÇANTE",
+		() => "M",
+		() => "REMPLAÇANT",
+		() => 0.2
 	];
 }
 
